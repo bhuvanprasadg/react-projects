@@ -1,0 +1,18 @@
+{
+  "name": "bookshopserver",
+  "version": "1.0.0",
+  "description": "Bookshop for Angular Course",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Rattan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.18.1",
+    "express-session": "^1.15.6",
+    "pg": "^8.7.3"
+  }
+}

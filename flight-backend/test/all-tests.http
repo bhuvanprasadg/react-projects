@@ -1,0 +1,85 @@
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+    "email": "sinha.j@gmail.com",
+    "password": "xyz123@j"
+}
+
+//API to cancel a flight
+DELETE http://localhost:3001/flight
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjp0cnVlLCJpc0FnZW50Ijp0cnVlLCJpc1Bhc3NlbmdlciI6dHJ1ZSwiaWF0IjoxNjQ5OTQ5Mzg0fQ.RhXx5gJJLml6Dd7nKGYqooSF3AGy2QL8urn50D_XILA
+
+{
+"flightId": "8136"
+}
+
+
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+    "username": "Sreelatha",
+    "password": "sreelatha123"
+}
+
+//List flights given the departure airport and arrival airport (with pagination)
+GET http://localhost:3001/flight/findWithArrDep?departure=DME&arrival=LED&pageNum=1&pageSize=12
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjp0cnVlLCJpc0FnZW50Ijp0cnVlLCJpc1Bhc3NlbmdlciI6dHJ1ZSwiaWF0IjoxNjQ5OTQ5Mzg0fQ.RhXx5gJJLml6Dd7nKGYqooSF3AGy2QL8urn50D_XILA
+
+//Print boarding pass given a ticket id and flight id
+GET http://localhost:3001/boarding-pass?ticket_no=0005432000861&flight_id=57376 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjp0cnVlLCJpc0FnZW50Ijp0cnVlLCJpc1Bhc3NlbmdlciI6dHJ1ZSwiaWF0IjoxNjQ5OTQ5Mzg0fQ.RhXx5gJJLml6Dd7nKGYqooSF3AGy2QL8urn50D_XILA
+
+//Show flights scheduled for a given date, from and to airport codes.
+GET http://localhost:3001/flight/findFlights?date=2017-09-14&from=SVO&to=BZK HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoic2luaGEuakBnbWFpbC5jb20iLCJyb2xlIjoicGFzc2VuZ2VyIn0sImlhdCI6MTY1MzM4NzUxNH0.QCQuBK2eeRb_QwPeyKi7gvKaMbdLKW9yMVaY_wSAPc8
+
+
+
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+    "username": "sridhar.j",
+    "password": "secret123"
+}
+
+
+GET http://localhost:3001/airports
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic3JpZGhhci5qIiwicm9sZSI6InBhc3NlbmdlciJ9LCJpYXQiOjE2NTMzODI3NDF9.zd7MS2QQ20DmGgXn_tn6a9D6tt-sWKi8rt-xmlAINdU
+
+//Booking API
+POST http://localhost:3001/flights/booking
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwiaXNBZ2VudCI6dHJ1ZSwiaXNQYXNzZW5nZXIiOnRydWUsImlhdCI6MTY0OTk0NDQ4Mn0.EjdFOmM8qCbHMW1uxLcQtjmjfAggDeeFjiAJrcqCMK0
+
+{
+"dateOfDeparture": "2017-09-01",
+"flightId": 273,
+"departureAirport": "DME",
+"arrivalAirport": "LED",
+"passengerId": "7062 529480",
+"passengerName": "ByobI",
+"ticketNo": "1545432081123",
+"fareConditions": "Business",
+"bookingRef": "EFDB8P",
+"totalAmount": 100000,
+"boardingNo": "390",
+"seatNo": "2G"
+}
+
+
+//API to change seat number in a boarding pass
+PUT http://localhost:3001/boardingPass/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwiaXNBZ2VudCI6dHJ1ZSwiaXNQYXNzZW5nZXIiOnRydWUsImlhdCI6MTY0OTk0NDQ4Mn0.EjdFOmM8qCbHMW1uxLcQtjmjfAggDeeFjiAJrcqCMK0
+
+{
+"ticketNo": "0005435208229",
+"flightId": "60731",
+"boardingNo": "1",
+"seatNo":"1H"
+}

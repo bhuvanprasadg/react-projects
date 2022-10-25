@@ -1,0 +1,7 @@
+POST http://localhost:3030/api/todos
+Content-Type: application/json
+Accept: application/json
+
+{"content":"movie this night","id":1}
+
+GET http://localhost:3030/api/todos/

@@ -1,0 +1,141 @@
+GET http://localhost:3000/aircraft/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc1ZlcmlmaWVkIjp0cnVlLCJpYXQiOjE2NDk5MTg5NTZ9.9jXg4UL9htAFcvYTr7ddXhBTqiTZfpvKlk01HHe5Scs
+
+
+GET http://localhost:3000/flight?pageNum=3&pageSize=10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjp0cnVlLCJpc0FnZW50Ijp0cnVlLCJpc1Bhc3NlbmdlciI6dHJ1ZSwiaWF0IjoxNjUzMzY1MTkxfQ.GytZK_V6oGf0QliEYiqXfx3PxrXfNjZN6SqaeDk8www
+
+
+POST http://localhost:3000/booking
+Content-Type: application/json
+
+{
+    "bookingRef": "2F002",
+    "totalAmount": 200000
+}
+
+GET http://localhost:3000/flight?pageNum=1&pageSize=10&departureAirport=LED&arrivalAirport=CEE
+
+GET http://localhost:3000/boarding-pass?ticketNo=0005432000860&flightId=57376
+
+POST http://localhost:3000/booking
+Content-Type: application/json
+
+{
+    "bookingRef": "2F002",
+    "totalAmount": 200000
+}
+
+POST http://localhost:3000/ticket
+Content-Type: application/json
+
+{
+    "ticketNo": "0005432005999",
+    "bookingRef": "2F002",
+    "passengerId": "4750 122452",
+    "passengerName": "My Name Here"
+}
+
+POST http://localhost:3000/boarding-pass
+Content-Type: application/json
+
+{
+    "ticketNo": "0005435208229",
+    "flightId": 60731,
+    "boardingNo": 1,
+    "seatNo": "1H"
+}
+
+POST http://localhost:3000/ticket
+Content-Type: application/json
+
+{
+    "ticketNo": "0005432005999",
+    "flightId":60731,
+    "fareConditions":"Economy",
+    "amount":28900.00
+}
+
+GET http://localhost:3000/flight?pageNum=1&pageSize=10&scheduledDeparture=2017-06-05&arrivalAirport=LED
+
+GET http://localhost:3000/flight?flightId=11002&scheduledDeparture=2017-05-29&departureAirport=SVO&arrivalAirport=KJA
+
+//passenger
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email":"sinha.j@gmail.com",
+    "password":"xyz123@j"
+}
+
+//admin
+POST http://localhost:3030/login
+Content-Type: application/json
+
+{
+    "email":"agarwal.r@gmail.com",
+    "password":"abc098@r"
+}
+
+//agent
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email":"sainesh.n@gmail.com",
+    "password":"mno456@s"
+}
+
+//admin 1
+DELETE http://localhost:3000/flight
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjp0cnVlLCJpc0FnZW50Ijp0cnVlLCJpc1Bhc3NlbmdlciI6dHJ1ZSwiaWF0IjoxNjQ5OTM0Mzc4fQ.uxrdwBmuREUwS2Srg8exK-KcQ8mUHVj41aR_YSA2_Vs
+Content-Type: application/json
+
+{
+    "flightId": "61090"
+}
+
+//agent 1
+POST http://localhost:3000/flights/booking
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwiaXNBZ2VudCI6dHJ1ZSwiaXNQYXNzZW5nZXIiOnRydWUsImlhdCI6MTY0OTkzNTI5M30.e7lJt9MKL_IBRIFYwTgpDDFZSP8Ist0FGFfTJe7-I2w
+Content-Type: application/json
+
+{
+    "dateOfDeparture": "2017-05-17 17:20:00+05:30",
+    "flightId": 60731,
+    "departureAirport": "AER",
+    "arrivalAirport": "SVO",
+    "passengerId": "7060 529480",
+    "passengerName": "Byobu",
+    "ticketNo": "0005432081075",
+    "fareConditions": "Business",
+    "bookingRef": "FFDB8E",
+    "totalAmount": 10000.00,
+    "boardingNo": 1,
+    "seatNo": "1H"
+}
+
+//agent 2
+PUT http://localhost:3000/boarding-pass/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwiaXNBZ2VudCI6dHJ1ZSwiaXNQYXNzZW5nZXIiOnRydWUsImlhdCI6MTY0OTkzNTI5M30.e7lJt9MKL_IBRIFYwTgpDDFZSP8Ist0FGFfTJe7-I2w
+Content-Type: application/json
+
+{
+    "ticketNo": "0005434173222",
+    "flightId": "11002",
+    "boardingNo": "94",
+    "seatNo":"22C"
+}
+
+//passenger 1
+GET http://localhost:3000/flight/findWithArrDep?pageNum=1&pageSize=10&departureAirport=LED&arrivalAirport=CEE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwiaXNBZ2VudCI6ZmFsc2UsImlzUGFzc2VuZ2VyIjp0cnVlLCJpYXQiOjE2NDk5MzY4MjN9._de164pTLIZN8LbeCa5waLotR9cKmANLzsDTrUk0zvI
+
+//passenger 2
+GET http://localhost:3000/boarding-pass?ticketNo=0005432000860&flightId=57376
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwiaXNBZ2VudCI6ZmFsc2UsImlzUGFzc2VuZ2VyIjp0cnVlLCJpYXQiOjE2NDk5MzY4MjN9._de164pTLIZN8LbeCa5waLotR9cKmANLzsDTrUk0zvI
+
+//passenger 3
+GET http://localhost:3000/flight?flightId=11002&scheduledDeparture=2017-05-29&departureAirport=SVO&arrivalAirport=KJA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwiaXNBZ2VudCI6ZmFsc2UsImlzUGFzc2VuZ2VyIjp0cnVlLCJpYXQiOjE2NDk5MzY4MjN9._de164pTLIZN8LbeCa5waLotR9cKmANLzsDTrUk0zvI

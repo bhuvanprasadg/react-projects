@@ -1,0 +1,46 @@
+Form{
+    border: 4px solid rgb(255, 251, 232);
+    margin: 5em 20em 5em 20em;
+    background-color: antiquewhite;
+    padding: 2em 5em 2em 5em;
+}
+.name{
+    display: flex;
+}
+.firstName{
+    width: 50%;
+}
+.lastName{
+    width: 50%;
+}
+h1{
+    text-align: center;
+    color: rgb(3, 47, 74);
+}
+.date{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.jobSatisfaction{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.table{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.yesNo1, .yesNo2, .yesNo3, .yesNo4{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.textarea{
+    border-radius: 2px;
+    border-style: none;
+    background-color: rgb(242, 242, 242);
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
